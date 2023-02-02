@@ -36,7 +36,7 @@ const fileInput = async () => {
     for (const line of lines) {
       axios.get(`https://twitter.com/users/email_available?email=${line}`)
         .then(res => {
-          console.log(res.data);
+          console.log(`${line}: `,res.data, '\n');
         })
         .catch(err => {
           console.error(err)
